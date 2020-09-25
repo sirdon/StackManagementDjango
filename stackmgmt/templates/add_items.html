@@ -1,0 +1,24 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    
+    {% include 'bootstrap.html' %}
+    <link  href="{% static '/admin/css/stylesheet.css' %}" rel="stylesheet">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="jumbotron">
+        <form class="form-inline" method="POST" action="" >{% csrf_token %}
+            {{form|crispy}}
+          <input class="form-control mr-sm-2" type="submit" value="Save">
+        </form>
+    </div>
+
+        
+</body>
+</html>
